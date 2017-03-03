@@ -32,3 +32,6 @@ QQDemo/Debug/mt.dep
 *.exe
 bin/Debug/MFCDemo.ilk
 *.aps
+bin/DuiLib_ud.dll
+lib/DuiLib_d.lib
+lib/DuiLib_ud.lib
