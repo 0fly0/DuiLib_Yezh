@@ -128,11 +128,11 @@ m_bLayeredChanged(false)
 {
 	if (m_SharedResInfo.m_DefaultFontInfo.sFontName.IsEmpty())
 	{
-		m_SharedResInfo.m_dwDefaultDisabledColor = 0xFFA7A6AA;
-		m_SharedResInfo.m_dwDefaultFontColor = 0xFF000000;
-		m_SharedResInfo.m_dwDefaultLinkFontColor = 0xFF0000FF;
-		m_SharedResInfo.m_dwDefaultLinkHoverFontColor = 0xFFD3215F;
-		m_SharedResInfo.m_dwDefaultSelectedBkColor = 0xFFBAE4FF;
+		m_SharedResInfo.m_dwDefaultDisabledColor = 0xFFA7A6AA;         //灰色
+		m_SharedResInfo.m_dwDefaultFontColor = 0xFF000000;             //黑色
+		m_SharedResInfo.m_dwDefaultLinkFontColor = 0xFF0000FF;         //蓝色
+		m_SharedResInfo.m_dwDefaultLinkHoverFontColor = 0xFFD3215F;    //红色
+		m_SharedResInfo.m_dwDefaultSelectedBkColor = 0xFFBAE4FF;       //淡蓝色
 
 		LOGFONT lf = { 0 };
 		::GetObject(::GetStockObject(DEFAULT_GUI_FONT), sizeof(LOGFONT), &lf);

@@ -513,7 +513,11 @@ namespace DuiLib
 	//************************************
 	void CTreeNodeUI::SetVisibleFolderBtn( bool _IsVisibled )
 	{
-		pFolderButton->SetVisible(_IsVisibled);
+		if (IsHasChild())
+		{
+			pFolderButton->SetVisible(_IsVisibled);
+		}else
+			pFolderButton->SetVisible(false);           //没有子节点的 时候不显示展开按钮
 	}
 
 	//************************************
@@ -1021,11 +1025,11 @@ namespace DuiLib
 				{
 					CTreeNodeUI* pItem = _TreeNode->GetChildNode(nIndex);
 					pItem->SetVisible(_Expanded);
-
 					if(pItem->GetCountChild() && !pItem->GetFolderButton()->IsSelected())
 						SetItemExpand(_Expanded,pItem);
 				}
 			}
+			_TreeNode->GetFolderButton()->SetCheck(!_Expanded);                        //展开收起时 check状态也跟着改
 		}
 		else
 		{
@@ -1034,7 +1038,6 @@ namespace DuiLib
 			while(nIndex < nCount)
 			{
 				CTreeNodeUI* pItem = (CTreeNodeUI*)GetItemAt(nIndex);
-
 				pItem->SetVisible(_Expanded);
 
 				if(pItem->GetCountChild() && !pItem->GetFolderButton()->IsSelected())
